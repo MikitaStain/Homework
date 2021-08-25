@@ -1,4 +1,6 @@
-package by.it_academy.homeworkRegister;
+package by.it_academy.homeworkRegister.storage;
+
+import by.it_academy.homeworkRegister.model.User;
 
 import java.util.HashMap;
 import java.util.Map;

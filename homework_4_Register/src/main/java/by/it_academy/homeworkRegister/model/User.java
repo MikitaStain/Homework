@@ -1,4 +1,4 @@
-package by.it_academy.homeworkRegister;
+package by.it_academy.homeworkRegister.model;
 
 public class User {
     private String login;

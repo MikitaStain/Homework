@@ -1,4 +1,7 @@
-package by.it_academy.homeworkRegister;
+package by.it_academy.homeworkRegister.web.servlet;
+
+import by.it_academy.homeworkRegister.model.User;
+import by.it_academy.homeworkRegister.service.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -7,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.Map;
 
 @WebServlet(name = "signUp", urlPatterns = "/signUp")
 public class SignUp extends HttpServlet {

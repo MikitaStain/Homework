@@ -1,4 +1,4 @@
-package by.it_academy.homeworkRegister;
+package by.it_academy.homeworkRegister.web.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "First", urlPatterns = "/enter")
-public class FirstServlet extends HttpServlet {
+public class EnterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("/views/enter.jsp").forward(req,resp);
