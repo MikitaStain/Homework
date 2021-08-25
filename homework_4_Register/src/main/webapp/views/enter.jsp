@@ -7,11 +7,11 @@
     <body>
         <h1>Привет, войди или зарегистрируйся!</h1>
         <br>
-        <form action = "">
+        <form action = "/Register-1.0-SNAPSHOT/views/signIn.jsp">
             <button>Войти</button>
             <br>
         </form>
-        <form action = "/Mk-JD-82-21-1.0-SNAPSHOT/signUp">
+        <form action = "/Register-1.0-SNAPSHOT/enter/signUp">
             <button>Регистрация</button>
         </form>
     </body>

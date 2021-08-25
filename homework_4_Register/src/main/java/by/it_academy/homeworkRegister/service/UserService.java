@@ -13,31 +13,21 @@ public class UserService {
         this.userStorage = UserStorage.getInstance();
     }
 
-    public boolean validationData(String login, User user) {
-        if (login != null
-                && user.getBirthDay() != null
-                && user.getLogin() != null
-                && user.getName() != null
-                && user.getPassword() != null) {
-            return true;
-        } else {
-            return false;
-        }
+    public boolean validationData(String login, String name, String password, String birthDay) {
+        return login != null
+                && name != null
+                && password != null
+                && birthDay != null;
     }
 
     public void addUser(String login, User user) {
         this.userStorage.getUsers().put(login, user);//добавит логин(key) и юзера(value) в мапу
     }
 
-    public boolean checkLogin(String login) {
-
-        return userStorage.getUsers().containsKey(login);//вернет true если есть данный ключ
-    }
 
     public User getUser(String login) {
-        User user = this.userStorage.getUsers().get(login);
 
-        return user; //вернет User по ключу(login)
+        return this.userStorage.getUsers().get(login); //вернет User по ключу(login)
     }
 
     public String[] infoUser(User user, String loginUser) {
@@ -49,15 +39,16 @@ public class UserService {
     }
 
     public boolean chekUserLoginAndPassword(String login, String password) {
-        this.userStorage.getUsers();
-        User user = getUsers(login).get(login);
-        String getPassword = user.getPassword();
+        if (getUsers().containsKey(login)) { //вернет true если логин существует
+            String checkPassword = getUsers().get(login).getPassword();//проверка на пароль
+            return checkPassword.equals(password);
+        }
+        return false;
 
-        return getPassword.equals(password);//вернет true если логин и пароль введены корректно
     }
 
 
-    public Map<String, User> getUsers(String login) {
+    public Map<String, User> getUsers() {
         return this.userStorage.getUsers();
     }
 

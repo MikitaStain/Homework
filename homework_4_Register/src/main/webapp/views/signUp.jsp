@@ -5,12 +5,8 @@
         <title>Register</title>
     </head>
     <body>
-        <c:choose>
-            <c:when test="${requestScope.error}">
-                <p style="color:red;">${requestScope.message}</p>
-            </c:when>
-        </c:choose>
-        <form action="/signUp" method="post">
+
+        <form action="/enter/signUp" method="post">
             <p><b>Регистрация!!</b></p>
             <p>
                 <label for="login">login: </label>
@@ -29,8 +25,13 @@
                 <input id="birth" type="text" name="birth">
             </p>
             <p><input type="submit" value="Зарегистрироваться"></p>
+            <c:choose>
+                 <c:when test="${requestScope.error}">
+                     <p style="color:red;">${requestScope.message}</p>
+                 </c:when>
+            </c:choose>
         </form>
-        <form action="/Mk-JD-82-21-1.0-SNAPSHOT/enter" method="get">
+        <form action="/Register-1.0-SNAPSHOT/enter" method="get">
             <button>Главная страница</button>
         </form>
 
