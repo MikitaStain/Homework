@@ -38,18 +38,23 @@ public class SignUp extends HttpServlet {
 
 
 
-        if (userService.chekUserLoginAndPassword(login,password)) {
-            req.setAttribute("message", "Логин занят");
-            req.setAttribute("error", true);
-            req.getRequestDispatcher("/views/signUp.jsp").forward(req, resp);
-        } else if (userService.validationData(login, name, birthDay, password)) {
+
+        if (userService.validationData(login, name, birthDay, password)) {
+
+            if (userService.chekUserLoginAndPassword(login,password)) {
+                req.setAttribute("message", "Логин занят");
+                req.setAttribute("error", true);
+                req.getRequestDispatcher("/views/signUp.jsp").forward(req, resp);
+            }
+
             User user = new User(login,password,name,birthDay);
 
             userService.addUser(login, user);
             HttpSession session = req.getSession();
             session.setAttribute("user", userService.getUser(login));
-            String path = req.getContextPath() + "/views/signUp.jsp";
+            String path = req.getContextPath() + "/views/account.jsp";
             resp.sendRedirect(path);
+
         } else {
             req.setAttribute("message", "Введены не все данные");
             req.setAttribute("error", true);

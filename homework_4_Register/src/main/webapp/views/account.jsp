@@ -4,10 +4,12 @@
     <title>Акаунт</title>
 </head>
 <body>
-<h3>Привет</h3>
-<form action="/Register-1.0-SNAPSHOT/enter" method="get">
-     <button>Главная страница</button>
-</form>
+    <h3>Привет</h3>
+    <p>Name: <%= request.getParameter("name") %></p>
+
+    <form action="/Register-1.0-SNAPSHOT/enter" method="get">
+         <button>Главная страница</button>
+    </form>
 
 
 </body>

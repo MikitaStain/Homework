@@ -6,7 +6,7 @@
     </head>
     <body>
 
-        <form action="/enter/signUp" method="post">
+        <form action="${pageContext.request.contextPath}/enter/signUp" method="post">
             <p><b>Регистрация!!</b></p>
             <p>
                 <label for="login">login: </label>
@@ -21,8 +21,8 @@
                 <input id="name" type="text" name="name">
             </p>
             <p>
-                <label for="birth">birth: </label>
-                <input id="birth" type="text" name="birth">
+                <label for="birth">birthDay: </label>
+                <input type="date" id="birthDay" name="birthDay">
             </p>
             <p><input type="submit" value="Зарегистрироваться"></p>
             <c:choose>

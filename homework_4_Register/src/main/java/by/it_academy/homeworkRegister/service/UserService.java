@@ -14,10 +14,10 @@ public class UserService {
     }
 
     public boolean validationData(String login, String name, String password, String birthDay) {
-        return login != null
-                && name != null
-                && password != null
-                && birthDay != null;
+        return login != ""
+                && name != ""
+                && password != ""
+                && birthDay != "";
     }
 
     public void addUser(String login, User user) {
@@ -42,8 +42,8 @@ public class UserService {
         if (getUsers().containsKey(login)) { //вернет true если логин существует
             String checkPassword = getUsers().get(login).getPassword();//проверка на пароль
             return checkPassword.equals(password);
-        }
-        return false;
+        }else{
+        return false;}
 
     }
 

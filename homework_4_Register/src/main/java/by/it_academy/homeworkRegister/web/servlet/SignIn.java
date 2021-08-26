@@ -30,7 +30,7 @@ public class SignIn extends HttpServlet {
             session.setAttribute("user", userService.getUsers());
             session.setAttribute("login", login);
             req.setAttribute("user", userService.getUsers());
-            req.getRequestDispatcher("views/account.jsp").forward(req, resp);
+            req.getRequestDispatcher("/users").forward(req, resp);
         } else {
             req.setAttribute("login", "Неправильно введен логин или пароль");
             req.getRequestDispatcher("/views/signIn.jsp").forward(req, resp);
