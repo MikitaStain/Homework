@@ -16,6 +16,7 @@ import java.io.IOException;
 @WebServlet(name = "SignUp", urlPatterns = "/enter/signUp")
 public class SignUp extends HttpServlet {
 
+    UserService userService = UserService.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -35,7 +36,7 @@ public class SignUp extends HttpServlet {
 
 
 
-        UserService userService = UserService.getInstance();
+
 
         if (userService.chekUserLoginAndPassword(login,password)) {
             req.setAttribute("message", "Логин занят");
