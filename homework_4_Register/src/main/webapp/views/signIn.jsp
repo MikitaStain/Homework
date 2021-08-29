@@ -19,11 +19,11 @@
                 <c:when test="${requestScope.error}">
                        <p style="color:red;">${requestScope.message}</p>
                 </c:when>
+
         </c:choose>
+        <p><input type="submit" value="Войти"></p>
         </form>
-        <form action="/Register-1.0-SNAPSHOT/views/signIn.jsp" method="get">
-                 <button>Вход</button>
-        </form>
+
         <form action="/Register-1.0-SNAPSHOT/enter" method="get">
                  <button>Главная страница</button>
         </form>
