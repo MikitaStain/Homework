@@ -50,10 +50,15 @@ public class SignUp extends HttpServlet {
             User user = new User(login,password,name,birthDay);
 
             userService.addUser(login, user);
+
+
+            ServletContext servletContext = req.getServletContext();
+            servletContext.setAttribute("user", userService.getUser(login));
+
             HttpSession session = req.getSession();
             session.setAttribute("user", userService.getUser(login));
-            String path = req.getContextPath() + "/views/account.jsp";
-            resp.sendRedirect(path);
+
+            resp.sendRedirect(req.getContextPath() + "/views/account.jsp");
 
         } else {
             req.setAttribute("message", "Введены не все данные");
