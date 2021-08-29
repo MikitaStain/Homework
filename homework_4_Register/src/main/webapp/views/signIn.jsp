@@ -5,7 +5,7 @@
         <title>Enter in account</title>
     </head>
     <body>
-        <form action="Mk-JD-82-21-1.0-SNAPSHOT/signIn" method="post">
+        <form action="${pageContext.request.contextPath}/enter/signIn" method="post">
         <p><b>Вход в аккаунт</b></p>
         <p>
                 <label for="login">login: </label>

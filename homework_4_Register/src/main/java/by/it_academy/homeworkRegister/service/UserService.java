@@ -24,6 +24,9 @@ public class UserService implements IUseService {
 
     @Override
     public void addUser(String login, User user) {
+        if (userStorage.getUsers().containsKey(login)) { //проверка на наличие данного ключа
+            throw new IllegalArgumentException(login + ": данный логин уже занят!!!");
+        }
         this.userStorage.getUsers().put(login, user);//добавит логин(key) и юзера(value) в мапу
     }
 
