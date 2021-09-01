@@ -5,7 +5,10 @@ import by.it_academy.homeworkRegister.model.User;
 import by.it_academy.homeworkRegister.service.api.IMessageService;
 import by.it_academy.homeworkRegister.storage.MessageStorage;
 
-
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 
 
 public class MessageService implements IMessageService {
@@ -28,12 +31,30 @@ public class MessageService implements IMessageService {
         return message.equals("");
     }
 
-    // public List<String> getInfoMessage(String sender) {//возвращает информацию о сообщении по отправителю
+    @Override
+    public List<String> getInfoMessage1(HashMap <String, Message> infoMessage, String login ){
 
-    //     List<String> info = (List<String>) messageStorage.getMessages().get(sender);
+        Message messageInfo = infoMessage.get(login);
+        String message = messageInfo.getMessage();
+        String sender = messageInfo.getSender();
+        String recipient = messageInfo.getRecipient();
+        String date = messageInfo.getDate().toString();
 
-    //     return info;
-    // }
+        List<String> listMessage = new ArrayList<>();
+        listMessage.add(message);
+        listMessage.add(sender);
+        listMessage.add(recipient);
+        listMessage.add(date);
+
+        return listMessage;
+
+
+    }
+    @Override
+     public List<String> getInfoMessage(String sender) {//возвращает информацию о сообщении по отправител
+         List<String> info = (List<String>) messageStorage.getMessages().get(sender);
+         return info;
+     }
 
 
     public static MessageService getInstance() {

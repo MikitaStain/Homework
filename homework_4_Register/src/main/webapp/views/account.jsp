@@ -13,7 +13,7 @@
          <button>Отправить сообщение</button>
     </form>
 
-    <form action="/Register-1.0-SNAPSHOT/views/listMessage.jsp">
+    <form action="/Register-1.0-SNAPSHOT/listMessage" method = "get">
          <button>Посмотреть сообщения</button>
     </form>
 
