@@ -50,6 +50,11 @@ public class UserService implements IUseService {
     }
 
     @Override
+    public boolean chekUserLogin(String login) {
+        return getUsers().containsKey(login);
+    }
+
+    @Override
     public boolean chekUserLoginAndPassword(String login, String password) {
         if (getUsers().containsKey(login)) { //вернет true если логин существует
             String checkPassword = getUsers().get(login).getPassword();//проверка на пароль
@@ -58,6 +63,14 @@ public class UserService implements IUseService {
             return false;
         }
 
+    }
+
+    @Override
+    public String myLogin(User user) {
+
+        String login = user.getLogin();
+
+        return login;
     }
 
     public static UserService getInstance() {

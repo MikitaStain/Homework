@@ -2,12 +2,13 @@ package by.it_academy.homeworkRegister.service;
 
 import by.it_academy.homeworkRegister.model.Message;
 import by.it_academy.homeworkRegister.model.User;
+import by.it_academy.homeworkRegister.service.api.IMessageService;
 import by.it_academy.homeworkRegister.storage.MessageStorage;
 
-import java.util.List;
 
 
-public class MessageService {
+
+public class MessageService implements IMessageService {
     private static final MessageService instance = new MessageService();
     private final MessageStorage messageStorage;
 
@@ -15,40 +16,24 @@ public class MessageService {
         this.messageStorage = MessageStorage.getInstance();
     }
 
-    public void addMessage(String textMessage, Message message) {
-        if (textMessage.equals("")) {
-            throw new IllegalArgumentException("Отсутствует текст сообщения!!");
-        }
+    @Override
+    public void addMessage(String login, Message message) {
 
-        this.messageStorage.getMessages().put(textMessage, message);
+        this.messageStorage.getMessages().put(login, message);
     }
 
-    public User getSender(String login) {
+    @Override
+    public boolean chekMessage(String message) {
 
-        return UserService.getInstance().getUser(login);
+        return message.equals("");
     }
 
-    public User getRecipient(String login) {
+    // public List<String> getInfoMessage(String sender) {//возвращает информацию о сообщении по отправителю
 
-        return UserService.getInstance().getUser(login);
-    }
+    //     List<String> info = (List<String>) messageStorage.getMessages().get(sender);
 
-    public boolean validation(String recipient) {//Проверка на получателя
-
-        if (!UserService.getInstance()
-                .getUsers()
-                .containsKey(recipient)) {
-            throw new IllegalArgumentException("Пользователь не найден");
-        }
-        return true;
-    }
-
-  // public List<String> getInfoMessage(String sender) {//возвращает информацию о сообщении по отправителю
-
-  //     List<String> info = (List<String>) messageStorage.getMessages().get(sender);
-
-  //     return info;
-  // }
+    //     return info;
+    // }
 
 
     public static MessageService getInstance() {

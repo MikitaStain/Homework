@@ -1,24 +1,18 @@
 package by.it_academy.homeworkRegister.model;
 
+import java.util.Date;
+
 public class Message {
     private String message;
-    private String sender;
     private String recipient;
-    private String date;
+    private String sender;
+    private Date date;
 
-    public Message(String message, String sender, String recipient, String date) {
+    public Message(String message, String recipient, String sender, Date date) {
         this.message = message;
-        this.sender = sender;
         this.recipient = recipient;
+        this.sender = sender;
         this.date = date;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
     }
 
     public String getSender() {
@@ -29,6 +23,15 @@ public class Message {
         this.sender = sender;
     }
 
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+
     public String getRecipient() {
         return recipient;
     }
@@ -37,11 +40,11 @@ public class Message {
         this.recipient = recipient;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 }

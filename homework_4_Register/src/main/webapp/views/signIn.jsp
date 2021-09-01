@@ -27,4 +27,6 @@
         <form action="/Register-1.0-SNAPSHOT/enter" method="get">
                  <button>Главная страница</button>
         </form>
+    </body>
+</html>
 
