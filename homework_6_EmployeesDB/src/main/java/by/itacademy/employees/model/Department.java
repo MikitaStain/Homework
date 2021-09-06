@@ -5,10 +5,9 @@ public class Department {
     private long id;
     private String department;
 
-
-    public String Department() {
-
-        return null;
+    public Department(long id, String department) {
+        this.id = id;
+        this.department = department;
     }
 
     public String getDepartment() {

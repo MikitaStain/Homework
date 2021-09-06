@@ -1,9 +1,9 @@
 package by.itacademy.employees.service.api;
 
-import java.util.List;
-import java.util.Random;
+import by.itacademy.employees.service.DepartmentService;
 
 public enum EDepartmentName {
+
 
     SALES_DEPARTMENT("Sales department"),
     PURCHASE_DEPARTMENT("Purchase department"),
@@ -11,24 +11,38 @@ public enum EDepartmentName {
     TECHNICAL_SUPPORT_DEPARTMENT("Technical support department"),
     MARKETING_DEPARTMENT("Marketing department");
 
-    private final String DEPARTMENT_NAME;
+    public final  String DEPARTMENT_NAME;
+    private static final int LENGTH = EDepartmentName.values().length;
+    private static final EDepartmentName[] VALUES = EDepartmentName.values() ;
+
+
 
     EDepartmentName(String departName) {
         this.DEPARTMENT_NAME = departName;
     }
+    public String getDepartmentName(){
+        return DEPARTMENT_NAME;
+    }
 
-    private static final List<EDepartmentName> VALUES =
-            List.of(values());
 
-    private static final int SIZE = VALUES.size();
 
-    private static final Random RANDOM = new Random();
+    public static void forEnum(EDepartmentName [] eDepartmentNames, int length) {//Перебор отделов
 
-    public static EDepartmentName randomLetter() {
-        return VALUES.get(RANDOM.nextInt(SIZE));
+        for (int i = 0; i < length; i++) {
+
+            String department_name = eDepartmentNames[i].DEPARTMENT_NAME;
+
+
+
+        }
+
+
     }
 
     public static void main(String[] args) {
-        System.out.println(randomLetter().DEPARTMENT_NAME);
+       // forEnum(VALUES, LENGTH);
+
+
     }
+
 }
