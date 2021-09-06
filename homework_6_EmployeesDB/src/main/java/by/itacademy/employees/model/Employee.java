@@ -2,12 +2,18 @@ package by.itacademy.employees.model;
 
 public class Employee {
 
+    private long id;
     private String name;
     private Double salary;
+    private Department department;
+    private Position position;
 
-    public Employee(String name, Double salary) {
+    public Employee(String name, Double salary, Department department, Position position, long id) {
         this.name = name;
         this.salary = salary;
+        this.department = department;
+        this.position = position;
+        this.id = id;
     }
 
     public String getName() {
@@ -24,5 +30,29 @@ public class Employee {
 
     public void setSalary(Double salary) {
         this.salary = salary;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

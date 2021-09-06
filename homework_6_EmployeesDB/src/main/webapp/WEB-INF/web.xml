@@ -3,7 +3,11 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-    <display-name>Mk-JD2-82-21</display-name>
+    <display-name>EmployeesDB</display-name>
+
+    <welcome-file-list>
+        <welcome-file>views/index.jsp</welcome-file>
+    </welcome-file-list>
 
     <!--
     <servlet>
@@ -16,7 +20,7 @@
     </servlet-mapping>
     -->
 
-
+    <!--
     <filter>
         <filter-name>MyFilter</filter-name>
         <filter-class>javaEnterprise.servlets.filters.FilterServlet</filter-class>
@@ -34,7 +38,8 @@
         <url-pattern>/admin/*</url-pattern>
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
-    
+    -->
+
    <!--
     <listener>
         <listener-class>javaEnterprise.servlets.filters</listener-class>
