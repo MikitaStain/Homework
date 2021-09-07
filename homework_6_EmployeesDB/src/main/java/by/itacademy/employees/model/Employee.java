@@ -16,6 +16,14 @@ public class Employee {
         this.id = id;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -46,13 +54,5 @@ public class Employee {
 
     public void setPosition(Position position) {
         this.position = position;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 }
