@@ -1,6 +1,6 @@
 package by.itacademy.employees.service;
 
-import by.itacademy.employees.service.api.EDepartmentName;
+import by.itacademy.employees.storage.api.EDepartmentName;
 
 import java.util.Random;
 

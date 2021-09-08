@@ -8,14 +8,6 @@ public class Employee {
     private Department department;
     private Position position;
 
-    public Employee(String name, Double salary, Department department, Position position, long id) {
-        this.name = name;
-        this.salary = salary;
-        this.department = department;
-        this.position = position;
-        this.id = id;
-    }
-
     public long getId() {
         return id;
     }

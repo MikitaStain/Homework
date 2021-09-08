@@ -4,5 +4,5 @@ public interface IEmployeeService {
 
     boolean validationData(String name, String salary);
 
-    void addEmployee(String name, String salary,long id);
+    void addEmployee(String name, String salary);
 }

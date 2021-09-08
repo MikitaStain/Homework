@@ -13,18 +13,24 @@
         </p>
         <p>
                 <label for="salary">Salary: </label>
-                <input id="salary" type="text" name="salary">
+                <input id="salary" type="number" name="salary">
 
         </p>
-        <c:choose>
-                <c:when test="${requestScope.error}">
-                       <p style="color:red;">${requestScope.message}</p>
-                </c:when>
 
-        </c:choose>
 
         <p><input type="submit" value="Add"></p>
+
+        <c:choose>
+                        <c:when test="${requestScope.error}">
+                               <p style="color:red;">${requestScope.message}</p>
+                        </c:when>
+
+                </c:choose>
         </form>
+
+        <form action="/EmployesDB-1.0-SNAPSHOT/views/employee.jsp" method="get">
+                    <button>See added employee</button>
+                </form>
 
     </body>
 </html>

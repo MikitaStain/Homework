@@ -1,6 +1,7 @@
 package by.itacademy.employees.service;
 
 import by.itacademy.employees.service.api.IEmployeeService;
+import by.itacademy.employees.storage.AddDepartmentInDB;
 import by.itacademy.employees.storage.EmployeeStorage;
 
 public class EmployeeService implements IEmployeeService {
@@ -16,10 +17,13 @@ public class EmployeeService implements IEmployeeService {
                 && !salary.equals("");
     }
     @Override
-    public void addEmployee(String name, String salary,long id){
-        employeeStorage.getEmployees().setId(id);
-        employeeStorage.getEmployees().setName(name);
-        employeeStorage.getEmployees().setSalary(Double.valueOf(salary));
+    public void addEmployee(String name, String salary){
+
+        AddDepartmentInDB dbInit = new AddDepartmentInDB();
+
+        this.employeeStorage.getEmployees().setSalary(Double.valueOf(salary));
+        this.employeeStorage.getEmployees().setName(name);
+        this.employeeStorage.getEmployees().setId(dbInit.addEmployeeAndGetId(name, Double.valueOf(salary)));
     }
 
     public static EmployeeService getInstance(){
